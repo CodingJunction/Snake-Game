@@ -26,23 +26,28 @@ while True:
     sn.move()
 
     if sn.t[0].distance(f)<20:
-        print("NOm Nom Nom")
+      
         f.refresh()
         sc.incr()
         sn.add()
 
     if sn.t[0].xcor()>290 or sn.t[0].xcor()<-290 or sn.t[0].ycor()>290 or sn.t[0].ycor()<-290 :
         
-        sc.end()
-        break
+      #  sc.end()
+        sc.reset()
+        sn.reset()
+        
 
     for z in range(len(sn.t)):
         if sn.t[0].distance(sn.t[z])<10 and z!=0:
-            sc.end()
-            k=0
+        #    sc.end()
+       
+            sc.reset()
+            sn.reset()
             break
+        
 
-    if k==0:
-        break
+    # if k==0:
+    #     break
 
 s.exitonclick()
