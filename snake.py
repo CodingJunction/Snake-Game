@@ -68,7 +68,14 @@ class Snake(Turtle):
             self.t[0].setheading(0)
         pass
       
-
+    def reset(self):
+        for  i in self.t:
+            i.penup()
+            i.goto(2000,2000)
+            i.pendown()
+        self.t.clear()
+        self.s.update()
+        self.__init__()
 
 
         
